@@ -12,9 +12,11 @@
 		35D577ED229CCBB600CA3D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EB229CCBB600CA3D1B /* Main.storyboard */; };
 		35D577EF229CCBB600CA3D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EE229CCBB600CA3D1B /* Assets.xcassets */; };
 		35D577F2229CCBB600CA3D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577F0229CCBB600CA3D1B /* LaunchScreen.storyboard */; };
+		BF787AD935526ABEBB5528C4 /* Pods_Whack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22768E45515D990D6CDBEAD1 /* Pods_Whack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22768E45515D990D6CDBEAD1 /* Pods_Whack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D577E4229CCBB600CA3D1B /* Whack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D577E7229CCBB600CA3D1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35D577E9229CCBB600CA3D1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		35D577EE229CCBB600CA3D1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D577F1229CCBB600CA3D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35D577F3229CCBB600CA3D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1CFED19FAEEBE26DFDB4410 /* Pods-Whack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whack/Pods-Whack.debug.xcconfig"; sourceTree = "<group>"; };
+		A46DFB1B18C81251687307F5 /* Pods-Whack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Whack/Pods-Whack.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF787AD935526ABEBB5528C4 /* Pods_Whack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				35D577E6229CCBB600CA3D1B /* Whack */,
 				35D577E5229CCBB600CA3D1B /* Products */,
+				48BCCE8B3FAC32929A84F459 /* Pods */,
+				96EC06E0BD65AD605EA3E7D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Whack;
 			sourceTree = "<group>";
 		};
+		48BCCE8B3FAC32929A84F459 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1CFED19FAEEBE26DFDB4410 /* Pods-Whack.debug.xcconfig */,
+				A46DFB1B18C81251687307F5 /* Pods-Whack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		96EC06E0BD65AD605EA3E7D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22768E45515D990D6CDBEAD1 /* Pods_Whack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35D577F6229CCBB600CA3D1B /* Build configuration list for PBXNativeTarget "Whack" */;
 			buildPhases = (
+				24C3EA80D365AC4CACE8484B /* [CP] Check Pods Manifest.lock */,
 				35D577E0229CCBB600CA3D1B /* Sources */,
 				35D577E1229CCBB600CA3D1B /* Frameworks */,
 				35D577E2229CCBB600CA3D1B /* Resources */,
+				4D76C92E341BEAEC30DEC677 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24C3EA80D365AC4CACE8484B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D76C92E341BEAEC30DEC677 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Whack/Pods-Whack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Whack/Pods-Whack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35D577E0229CCBB600CA3D1B /* Sources */ = {
@@ -280,6 +351,7 @@
 		};
 		35D577F7229CCBB600CA3D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1CFED19FAEEBE26DFDB4410 /* Pods-Whack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +370,7 @@
 		};
 		35D577F8229CCBB600CA3D1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A46DFB1B18C81251687307F5 /* Pods-Whack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
