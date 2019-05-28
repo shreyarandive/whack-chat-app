@@ -12,6 +12,7 @@
 		35D577ED229CCBB600CA3D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EB229CCBB600CA3D1B /* Main.storyboard */; };
 		35D577EF229CCBB600CA3D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EE229CCBB600CA3D1B /* Assets.xcassets */; };
 		35D577F2229CCBB600CA3D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577F0229CCBB600CA3D1B /* LaunchScreen.storyboard */; };
+		35D577FD229CCDA500CA3D1B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D577FB229CCDA500CA3D1B /* SWRevealViewController.m */; };
 		BF787AD935526ABEBB5528C4 /* Pods_Whack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22768E45515D990D6CDBEAD1 /* Pods_Whack.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,9 @@
 		35D577EE229CCBB600CA3D1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D577F1229CCBB600CA3D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35D577F3229CCBB600CA3D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35D577FA229CCDA400CA3D1B /* Whack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Whack-Bridging-Header.h"; sourceTree = "<group>"; };
+		35D577FB229CCDA500CA3D1B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		35D577FC229CCDA500CA3D1B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A1CFED19FAEEBE26DFDB4410 /* Pods-Whack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whack/Pods-Whack.debug.xcconfig"; sourceTree = "<group>"; };
 		A46DFB1B18C81251687307F5 /* Pods-Whack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Whack/Pods-Whack.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,7 @@
 		35D577E6229CCBB600CA3D1B /* Whack */ = {
 			isa = PBXGroup;
 			children = (
+				35D577F9229CCD8200CA3D1B /* Supporting Files */,
 				35D577E7229CCBB600CA3D1B /* AppDelegate.swift */,
 				35D577E9229CCBB600CA3D1B /* ViewController.swift */,
 				35D577EB229CCBB600CA3D1B /* Main.storyboard */,
@@ -69,6 +74,16 @@
 				35D577F3229CCBB600CA3D1B /* Info.plist */,
 			);
 			path = Whack;
+			sourceTree = "<group>";
+		};
+		35D577F9229CCD8200CA3D1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35D577FC229CCDA500CA3D1B /* SWRevealViewController.h */,
+				35D577FB229CCDA500CA3D1B /* SWRevealViewController.m */,
+				35D577FA229CCDA400CA3D1B /* Whack-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		48BCCE8B3FAC32929A84F459 /* Pods */ = {
@@ -122,6 +137,7 @@
 				TargetAttributes = {
 					35D577E3229CCBB600CA3D1B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -208,6 +224,7 @@
 			files = (
 				35D577EA229CCBB600CA3D1B /* ViewController.swift in Sources */,
 				35D577E8229CCBB600CA3D1B /* AppDelegate.swift in Sources */,
+				35D577FD229CCDA500CA3D1B /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +371,7 @@
 			baseConfigurationReference = A1CFED19FAEEBE26DFDB4410 /* Pods-Whack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LPBH5JPMKU;
 				INFOPLIST_FILE = Whack/Info.plist;
@@ -363,6 +381,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shreyarandive.Whack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Whack/Supporting Files/Whack-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,6 +393,7 @@
 			baseConfigurationReference = A46DFB1B18C81251687307F5 /* Pods-Whack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LPBH5JPMKU;
 				INFOPLIST_FILE = Whack/Info.plist;
@@ -382,6 +403,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shreyarandive.Whack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Whack/Supporting Files/Whack-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
