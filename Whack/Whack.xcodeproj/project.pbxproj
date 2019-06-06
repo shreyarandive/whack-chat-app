@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350AB28722A88021009FEE18 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AB28622A88021009FEE18 /* ChatVC.swift */; };
+		350AB28922A88033009FEE18 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AB28822A88033009FEE18 /* ChannelVC.swift */; };
 		35D577E8229CCBB600CA3D1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D577E7229CCBB600CA3D1B /* AppDelegate.swift */; };
-		35D577EA229CCBB600CA3D1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D577E9229CCBB600CA3D1B /* ViewController.swift */; };
 		35D577ED229CCBB600CA3D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EB229CCBB600CA3D1B /* Main.storyboard */; };
 		35D577EF229CCBB600CA3D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EE229CCBB600CA3D1B /* Assets.xcassets */; };
 		35D577F2229CCBB600CA3D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577F0229CCBB600CA3D1B /* LaunchScreen.storyboard */; };
@@ -18,9 +19,10 @@
 
 /* Begin PBXFileReference section */
 		22768E45515D990D6CDBEAD1 /* Pods_Whack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		350AB28622A88021009FEE18 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		350AB28822A88033009FEE18 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		35D577E4229CCBB600CA3D1B /* Whack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D577E7229CCBB600CA3D1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35D577E9229CCBB600CA3D1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35D577EC229CCBB600CA3D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35D577EE229CCBB600CA3D1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D577F1229CCBB600CA3D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +46,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		350AB28322A87FDA009FEE18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				350AB28622A88021009FEE18 /* ChatVC.swift */,
+				350AB28822A88033009FEE18 /* ChannelVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		350AB28422A87FEF009FEE18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		350AB28522A87FF6009FEE18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		35D577DB229CCBB600CA3D1B = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +90,11 @@
 		35D577E6229CCBB600CA3D1B /* Whack */ = {
 			isa = PBXGroup;
 			children = (
+				350AB28522A87FF6009FEE18 /* Model */,
+				350AB28422A87FEF009FEE18 /* View */,
+				350AB28322A87FDA009FEE18 /* Controller */,
 				35D577F9229CCD8200CA3D1B /* Supporting Files */,
 				35D577E7229CCBB600CA3D1B /* AppDelegate.swift */,
-				35D577E9229CCBB600CA3D1B /* ViewController.swift */,
 				35D577EB229CCBB600CA3D1B /* Main.storyboard */,
 				35D577EE229CCBB600CA3D1B /* Assets.xcassets */,
 				35D577F0229CCBB600CA3D1B /* LaunchScreen.storyboard */,
@@ -222,7 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35D577EA229CCBB600CA3D1B /* ViewController.swift in Sources */,
+				350AB28922A88033009FEE18 /* ChannelVC.swift in Sources */,
+				350AB28722A88021009FEE18 /* ChatVC.swift in Sources */,
 				35D577E8229CCBB600CA3D1B /* AppDelegate.swift in Sources */,
 				35D577FD229CCDA500CA3D1B /* SWRevealViewController.m in Sources */,
 			);
