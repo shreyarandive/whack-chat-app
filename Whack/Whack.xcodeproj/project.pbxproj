@@ -15,6 +15,8 @@
 		35D577EF229CCBB600CA3D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D577EE229CCBB600CA3D1B /* Assets.xcassets */; };
 		35D577F2229CCBB600CA3D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D577F0229CCBB600CA3D1B /* LaunchScreen.storyboard */; };
 		35D577FD229CCDA500CA3D1B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D577FB229CCDA500CA3D1B /* SWRevealViewController.m */; };
+		35DEDA4F22AC931E00AC9E6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DEDA4E22AC931E00AC9E6C /* Constants.swift */; };
+		35DEDA5122AC9B5400AC9E6C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DEDA5022AC9B5400AC9E6C /* LoginVC.swift */; };
 		BF787AD935526ABEBB5528C4 /* Pods_Whack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22768E45515D990D6CDBEAD1 /* Pods_Whack.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		35D577FA229CCDA400CA3D1B /* Whack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Whack-Bridging-Header.h"; sourceTree = "<group>"; };
 		35D577FB229CCDA500CA3D1B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		35D577FC229CCDA500CA3D1B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		35DEDA4E22AC931E00AC9E6C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		35DEDA5022AC9B5400AC9E6C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A1CFED19FAEEBE26DFDB4410 /* Pods-Whack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whack/Pods-Whack.debug.xcconfig"; sourceTree = "<group>"; };
 		A46DFB1B18C81251687307F5 /* Pods-Whack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Whack/Pods-Whack.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +57,7 @@
 			children = (
 				350AB28622A88021009FEE18 /* ChatVC.swift */,
 				350AB28822A88033009FEE18 /* ChannelVC.swift */,
+				35DEDA5022AC9B5400AC9E6C /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		35D577E6229CCBB600CA3D1B /* Whack */ = {
 			isa = PBXGroup;
 			children = (
+				35DEDA4D22AC930400AC9E6C /* Constants */,
 				350AB28522A87FF6009FEE18 /* Model */,
 				350AB28422A87FEF009FEE18 /* View */,
 				350AB28322A87FDA009FEE18 /* Controller */,
@@ -114,6 +120,14 @@
 				35D577FA229CCDA400CA3D1B /* Whack-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35DEDA4D22AC930400AC9E6C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				35DEDA4E22AC931E00AC9E6C /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		48BCCE8B3FAC32929A84F459 /* Pods */ = {
@@ -254,8 +268,10 @@
 			files = (
 				350AB28922A88033009FEE18 /* ChannelVC.swift in Sources */,
 				350AB28722A88021009FEE18 /* ChatVC.swift in Sources */,
+				35DEDA5122AC9B5400AC9E6C /* LoginVC.swift in Sources */,
 				350AB28C22A894B0009FEE18 /* GradientView.swift in Sources */,
 				35D577E8229CCBB600CA3D1B /* AppDelegate.swift in Sources */,
+				35DEDA4F22AC931E00AC9E6C /* Constants.swift in Sources */,
 				35D577FD229CCDA500CA3D1B /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
