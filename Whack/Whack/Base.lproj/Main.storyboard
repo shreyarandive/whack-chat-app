@@ -210,7 +210,7 @@
                                     <action selector="createAccountBtnPressed:" destination="vCs-2C-mLL" eventType="touchUpInside" id="jhy-R1-qtE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-uj-OgO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-uj-OgO" customClass="RoundedButton" customModule="Whack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="396.5" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.1117582609" green="0.1125390615" blue="0.527898953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -223,6 +223,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="I86-Lw-jky">
                                 <rect key="frame" x="99.5" y="118.5" width="176" height="72"/>
@@ -342,9 +347,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8s-oq-NpL">
-                                <rect key="frame" x="137.5" y="347.5" width="100" height="120"/>
+                                <rect key="frame" x="137.5" y="347.5" width="100" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="JJT-9R-Mn5"/>
+                                    <constraint firstAttribute="height" constant="130" id="JJT-9R-Mn5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <state key="normal" title="Choose an avatar">
@@ -362,7 +367,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7y-AD-TEc">
-                                <rect key="frame" x="129" y="472.5" width="117" height="26"/>
+                                <rect key="frame" x="129" y="482.5" width="117" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="2e2-vd-fw9"/>
                                     <constraint firstAttribute="height" constant="26" id="qFI-4A-Ds8"/>
@@ -386,7 +391,7 @@
                                 <color key="textColor" red="0.2470588235" green="0.050980392159999999" blue="0.59947559930000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-Vb-dMs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-Vb-dMs" customClass="RoundedButton" customModule="Whack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.1117582609" green="0.1125390615" blue="0.527898953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -397,6 +402,11 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccountPressed:" destination="O7P-vw-9HW" eventType="touchUpInside" id="uvc-l7-yC4"/>
                                 </connections>
