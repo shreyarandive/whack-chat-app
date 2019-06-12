@@ -31,4 +31,7 @@ let URL_USER_ADD = "\(BASE_URL)user/add"
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
+
+//colors
+let smackPurplePlaceHolder = #colorLiteral(red: 0.5019607843, green: 0.07323310524, blue: 0.1168112829, alpha: 0.5)
  
