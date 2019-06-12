@@ -19,6 +19,7 @@ class CreateAccountVC: UIViewController {
     //defaults variables
     var avatarName = "smackProfileIcon"
     var avatarColor = "[0.5, 0.5, 0.5, 1.0]"
+    var bgColor : UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class CreateAccountVC: UIViewController {
         if UserDataService.instance.avatarName != "" {
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
             avatarName = UserDataService.instance.avatarName
+            if avatarName.contains("light") && bgColor == nil {
+                self.userImg.backgroundColor = UIColor.lightGray
+            }
         }
     }
     
@@ -57,7 +61,13 @@ class CreateAccountVC: UIViewController {
         performSegue(withIdentifier: AVATAR, sender: nil)
     }
     
-    @IBAction func generateBckgrndPressess(_ sender: Any) {
+    @IBAction func generateBckgrndPressed(_ sender: Any) {
+        let red = CGFloat(arc4random_uniform(255)) / 255
+        let green = CGFloat(arc4random_uniform(255)) / 255
+        let blue = CGFloat(arc4random_uniform(255)) / 255
+        
+        bgColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        self.userImg.backgroundColor = bgColor
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
