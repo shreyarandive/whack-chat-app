@@ -24,8 +24,11 @@ class CreateAccountVC: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func closeBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: UNWIND, sender: nil)
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
     }
     
     @IBAction func createAccountPressed(_ sender: Any) {
@@ -51,8 +54,13 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func chooseAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: AVATAR, sender: nil)
     }
     
     @IBAction func generateBckgrndPressess(_ sender: Any) {
+    }
+    
+    @IBAction func closeBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: UNWIND, sender: nil)
     }
 }
