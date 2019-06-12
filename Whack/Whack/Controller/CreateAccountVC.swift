@@ -16,6 +16,9 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
     
+    //defaults variables
+    var avatarName = "smackProfileIcon"
+    var avatarColor = "[0.5, 0.5, 0.5, 1.0]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +29,18 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func createAccountPressed(_ sender: Any) {
-        guard let email = emailTxt.text, emailTxt.text != "" else {
-            return
-        }
-        
-        guard let pwd = passwordTxt.text, passwordTxt.text != "" else {
-            return
-        }
+        guard let name = usernameTxt.text, usernameTxt.text != "" else { return }
+        guard let email = emailTxt.text, emailTxt.text != "" else { return }
+        guard let pwd = passwordTxt.text, passwordTxt.text != "" else { return }
         
         AuthService.instance.registerUser(email: email, password: pwd) { (success) in
             if success {
                 AuthService.instance.loginUser(email: email, password: pwd, completion: { (success) in
                     if success {
-                        print("logged in!!!", AuthService.instance.authToken)
+                        AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
+                            print(UserDataService.instance.name, UserDataService.instance.avatarName)
+                            self.performSegue(withIdentifier: UNWIND, sender: nil)
+                        })
                     }
                 })
             }
