@@ -53,6 +53,7 @@ class CreateAccountVC: UIViewController {
                             self.spinner.isHidden = true
                             self.spinner.startAnimating()
                             self.performSegue(withIdentifier: UNWIND, sender: nil)
+                            NotificationCenter.default.post(name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
                         })
                     }
                 })
@@ -73,6 +74,7 @@ class CreateAccountVC: UIViewController {
         let blue = CGFloat(arc4random_uniform(255)) / 255
         
         bgColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        avatarColor = "[\(red), \(green), \(blue), 1]"
         UIView.animate(withDuration: 0.2) {
             self.userImg.backgroundColor = self.bgColor
         }
@@ -84,9 +86,9 @@ class CreateAccountVC: UIViewController {
     
     func setupView() {
         spinner.isHidden = true
-        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: smackPurplePlaceHolder])
-        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: smackPurplePlaceHolder])
-        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: smackPurplePlaceHolder])
+        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
+        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
         let tap = UITapGestureRecognizer(target: self, action:#selector(CreateAccountVC.handleTap))
         view.addGestureRecognizer(tap)
     }

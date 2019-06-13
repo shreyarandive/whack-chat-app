@@ -10,10 +10,12 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var usrnameTxt: UITextField!
+    @IBOutlet weak var passwrdTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
     @IBAction func closePressed(_ sender: Any) {
@@ -21,5 +23,10 @@ class LoginVC: UIViewController {
     }
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
+    }
+    
+    func setupView() {
+        usrnameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
+        passwrdTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
     }
 }

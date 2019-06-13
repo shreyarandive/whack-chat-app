@@ -136,6 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="Yuf-8M-20k" id="NT3-IU-7XS"/>
+                        <outlet property="usrImg" destination="7rJ-Uo-Sie" id="V24-G3-RPD"/>
                         <segue destination="vCs-2C-mLL" kind="show" identifier="toLogin" id="C4Q-3p-uvU"/>
                     </connections>
                 </viewController>
@@ -279,6 +280,8 @@
                         <viewLayoutGuide key="safeArea" id="CS5-Kb-ees"/>
                     </view>
                     <connections>
+                        <outlet property="passwrdTxt" destination="hz8-rX-TZs" id="tCc-gk-ZH3"/>
+                        <outlet property="usrnameTxt" destination="icd-q8-D3U" id="5gi-l2-Unc"/>
                         <segue destination="O7P-vw-9HW" kind="show" identifier="toCreateAccount" id="d5O-Zw-Ahg"/>
                     </connections>
                 </viewController>

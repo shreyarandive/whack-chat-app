@@ -33,5 +33,8 @@ let HEADER = [
 ]
 
 //colors
-let smackPurplePlaceHolder = #colorLiteral(red: 0.5019607843, green: 0.07323310524, blue: 0.1168112829, alpha: 0.5)
+let whackPurplePlaceHolder = #colorLiteral(red: 0.5019607843, green: 0.07323310524, blue: 0.1168112829, alpha: 0.5)
+
+//notifications
+let NOTIF_USR_DATA_DID_CHANGE = Notification.Name("notifUsrDataChanged")
  

@@ -131,7 +131,7 @@ class AuthService {
                 do {
                     let json = try JSON(data: data)
                     let id = json["_id"].stringValue
-                    let avatarColor = json["avatatColor"].stringValue
+                    let avatarColor = json["avatarColor"].stringValue
                     let avatarName = json["avatarName"].stringValue
                     let name = json["name"].stringValue
                     let email = json["email"].stringValue
