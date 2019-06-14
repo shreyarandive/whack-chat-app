@@ -352,6 +352,7 @@
                         <viewLayoutGuide key="safeArea" id="eNf-BB-Qni"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLbl" destination="dhX-SO-qaU" id="anU-3D-Prp"/>
                         <outlet property="menuHamburgerBtn" destination="tTI-OX-VAn" id="9pu-YS-K6h"/>
                     </connections>
                 </viewController>

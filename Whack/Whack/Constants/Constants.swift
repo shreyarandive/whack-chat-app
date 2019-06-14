@@ -44,4 +44,6 @@ let whackPurplePlaceHolder = #colorLiteral(red: 0.5019607843, green: 0.073233105
 
 //notifications
 let NOTIF_USR_DATA_DID_CHANGE = Notification.Name("notifUsrDataChanged")
- 
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
+
