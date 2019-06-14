@@ -19,5 +19,13 @@ class ChatVC: UIViewController {
         menuHamburgerBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        if AuthService.instance.isLoggedin {
+            AuthService.instance.findUserByEmail { (success) in
+                if success {
+                    NotificationCenter.default.post(name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
+                }
+            }
+        }
     }
 }

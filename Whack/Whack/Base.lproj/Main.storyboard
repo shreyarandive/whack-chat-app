@@ -196,7 +196,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IE-MT-VbA">
-                                <rect key="frame" x="62.5" y="449.5" width="250" height="20"/>
+                                <rect key="frame" x="62.5" y="479.5" width="250" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="D7U-Yw-2pc"/>
                                     <constraint firstAttribute="width" constant="250" id="I3N-dm-JPj"/>
@@ -212,7 +212,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-uj-OgO" customClass="RoundedButton" customModule="Whack" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="396.5" width="250" height="50"/>
+                                <rect key="frame" x="62.5" y="426.5" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.1117582609" green="0.1125390615" blue="0.527898953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0y8-yW-q8j"/>
@@ -229,6 +229,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="vCs-2C-mLL" eventType="touchUpInside" id="2Bl-sA-s9c"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="I86-Lw-jky">
                                 <rect key="frame" x="99.5" y="118.5" width="176" height="72"/>
@@ -263,15 +266,22 @@
                                     <action selector="closePressed:" destination="vCs-2C-mLL" eventType="touchUpInside" id="YJH-gw-D7p"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5n4-jM-3Pv">
+                                <rect key="frame" x="169" y="384" width="37" height="37"/>
+                                <color key="color" red="0.41960784309999999" green="0.031372549020000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5n4-jM-3Pv" firstAttribute="centerX" secondItem="agH-cF-7bW" secondAttribute="centerX" id="1Ye-qZ-nqq"/>
                             <constraint firstItem="GEy-jd-WCz" firstAttribute="centerX" secondItem="agH-cF-7bW" secondAttribute="centerX" id="Aat-r1-hPj"/>
                             <constraint firstItem="6IE-MT-VbA" firstAttribute="top" secondItem="eg0-uj-OgO" secondAttribute="bottom" constant="3" id="KHD-eh-Rz2"/>
                             <constraint firstItem="GEy-jd-WCz" firstAttribute="top" secondItem="I86-Lw-jky" secondAttribute="bottom" constant="100" id="T0g-41-ZKS"/>
+                            <constraint firstItem="5n4-jM-3Pv" firstAttribute="top" secondItem="GEy-jd-WCz" secondAttribute="bottom" constant="7.5" id="Tec-Uc-fTq"/>
                             <constraint firstItem="CS5-Kb-ees" firstAttribute="trailing" secondItem="gK6-uQ-2PE" secondAttribute="trailing" constant="16" id="Uyd-dJ-DB4"/>
                             <constraint firstItem="I86-Lw-jky" firstAttribute="centerX" secondItem="agH-cF-7bW" secondAttribute="centerX" id="VeT-NS-C3q"/>
-                            <constraint firstItem="eg0-uj-OgO" firstAttribute="top" secondItem="GEy-jd-WCz" secondAttribute="bottom" constant="20" id="hhj-ki-aYG"/>
+                            <constraint firstItem="eg0-uj-OgO" firstAttribute="top" secondItem="5n4-jM-3Pv" secondAttribute="bottom" constant="5.5" id="bkH-rp-rCe"/>
+                            <constraint firstItem="eg0-uj-OgO" firstAttribute="top" secondItem="GEy-jd-WCz" secondAttribute="bottom" constant="50" id="hhj-ki-aYG"/>
                             <constraint firstItem="eg0-uj-OgO" firstAttribute="centerX" secondItem="agH-cF-7bW" secondAttribute="centerX" id="i3x-8F-NKN"/>
                             <constraint firstItem="GEy-jd-WCz" firstAttribute="centerY" secondItem="agH-cF-7bW" secondAttribute="centerY" id="rCl-9k-dqx"/>
                             <constraint firstItem="6IE-MT-VbA" firstAttribute="centerX" secondItem="agH-cF-7bW" secondAttribute="centerX" id="uk0-Kn-FZk"/>
@@ -281,6 +291,7 @@
                     </view>
                     <connections>
                         <outlet property="passwrdTxt" destination="hz8-rX-TZs" id="tCc-gk-ZH3"/>
+                        <outlet property="spinner" destination="5n4-jM-3Pv" id="wbQ-LE-RNQ"/>
                         <outlet property="usrnameTxt" destination="icd-q8-D3U" id="5gi-l2-Unc"/>
                         <segue destination="O7P-vw-9HW" kind="show" identifier="toCreateAccount" id="d5O-Zw-Ahg"/>
                     </connections>
