@@ -78,7 +78,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TgG-RN-pqj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="TgG-RN-pqj" customClass="ChannelCell" customModule="Whack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TgG-RN-pqj" id="8iU-Ph-fnj">
@@ -101,6 +101,9 @@
                                                 <constraint firstItem="DiL-Py-Dcn" firstAttribute="centerY" secondItem="8iU-Ph-fnj" secondAttribute="centerY" id="qjO-mm-nOl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="channelName" destination="DiL-Py-Dcn" id="vJb-AK-jxY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -136,6 +139,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="Yuf-8M-20k" id="NT3-IU-7XS"/>
+                        <outlet property="tableView" destination="m5e-wA-IvK" id="EVn-JA-CXe"/>
                         <outlet property="usrImg" destination="7rJ-Uo-Sie" id="V24-G3-RPD"/>
                         <segue destination="vCs-2C-mLL" kind="show" identifier="toLogin" id="C4Q-3p-uvU"/>
                     </connections>
