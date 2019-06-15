@@ -51,8 +51,8 @@ class LoginVC: UIViewController {
         spinner.isHidden = true
         usrnameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
         passwrdTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
-        let tap = UIGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
-        //view.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
+        view.addGestureRecognizer(tap)
     }
     
     @objc func handleTap() {
