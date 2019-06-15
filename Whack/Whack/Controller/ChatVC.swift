@@ -13,9 +13,15 @@ class ChatVC: UIViewController {
     //Outlets
     @IBOutlet weak var menuHamburgerBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
+    @IBOutlet weak var messageText: UITextField!
+    @IBOutlet weak var sendBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.bindToKeyboard()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
         
         menuHamburgerBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -33,6 +39,9 @@ class ChatVC: UIViewController {
         }
     }
     
+    @IBAction func sendBtnPressed(_ sender: Any) {
+    }
+    
     @objc func userDataDidChange(_ notif: Notification) {
         if AuthService.instance.isLoggedin {
             onLoginGetMessages()
@@ -45,6 +54,10 @@ class ChatVC: UIViewController {
         updateWithChannel()
     }
     
+    @objc func handleTap() {
+        view.endEditing(true)
+    }
+    
     func updateWithChannel() {
         let channelName = MessageService.instance.selectedChannel?.name ?? ""
         channelNameLbl.text = "#\(channelName)"
@@ -53,7 +66,12 @@ class ChatVC: UIViewController {
     func onLoginGetMessages() {
         MessageService.instance.findChannels { (success) in
             if success {
-                
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                } else {
+                    self.channelNameLbl.text = "Create a channel and get going!"
+                }
             }
         }
     }
