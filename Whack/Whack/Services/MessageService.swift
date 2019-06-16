@@ -55,7 +55,7 @@ class MessageService {
                         for item in json {
                             let messageBody = item["messageBody"].stringValue
                             let timeStamp = item["timeStamp"].stringValue
-                            let userId = item["userId"].stringValue
+                            let userId = item["_id"].stringValue
                             let channelId = item["channelId"].stringValue
                             let userName = item["userName"].stringValue
                             let userAvatarName = item["userAvatar"].stringValue
