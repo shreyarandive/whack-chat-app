@@ -17,6 +17,9 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var messageTxt: UITextField!
     
+    //variables
+    var isTyping = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
@@ -24,6 +27,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableview.estimatedRowHeight = 70
         tableview.rowHeight = UITableView.automaticDimension
+        
+        sendBtn.isHidden = true
         
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
@@ -35,6 +40,16 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
+        SocketService.instance.getMessages { (success) in
+            if success {
+                self.tableview.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableview.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                }
+            }
+        }
         
         if AuthService.instance.isLoggedin {
             AuthService.instance.findUserByEmail { (success) in
@@ -62,11 +77,24 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @IBAction func msgTextEditing(_ sender: Any) {
+        if messageTxt.text == "" {
+            isTyping = false
+            sendBtn.isHidden = true
+        } else {
+            if isTyping == false {
+                sendBtn.isHidden = false
+            }
+            isTyping = true
+        }
+    }
+    
     @objc func userDataDidChange(_ notif: Notification) {
         if AuthService.instance.isLoggedin {
             onLoginGetMessages()
         } else {
             channelNameLbl.text = "Please Login"
+            tableview.reloadData()
         }
     }
     
