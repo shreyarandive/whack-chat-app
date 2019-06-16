@@ -40,6 +40,20 @@ class ChatVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
+        if AuthService.instance.isLoggedin {
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            guard let message = messageText.text else { return }
+            
+            SocketService.instance.addMessages(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
+                if success {
+                    //print("SUCCCESS")
+                    self.messageText.text = ""
+                    self.messageText.resignFirstResponder()
+                } else {
+                    print("ERROR")
+                }
+            }
+        }
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
@@ -61,6 +75,7 @@ class ChatVC: UIViewController {
     func updateWithChannel() {
         let channelName = MessageService.instance.selectedChannel?.name ?? ""
         channelNameLbl.text = "#\(channelName)"
+        getMessages()
     }
     
     func onLoginGetMessages() {
@@ -72,6 +87,17 @@ class ChatVC: UIViewController {
                 } else {
                     self.channelNameLbl.text = "Create a channel and get going!"
                 }
+            }
+        }
+    }
+    
+    func getMessages() {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+        MessageService.instance.findAllMessages(channelID: channelId) { (success) in
+            if success {
+                
+            } else {
+                
             }
         }
     }
