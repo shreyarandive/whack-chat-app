@@ -52,7 +52,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getMessages(completion: @escaping (_ newMessage: Message) -> Void) {
+    func getAllMessages(completion: @escaping (_ newMessage: Message) -> Void) {
         socket.on("messageCreated") { (dataArray, ack) in
             guard let messageBody = dataArray[0] as? String else { return }
             guard let channelId = dataArray[2] as? String else { return }
