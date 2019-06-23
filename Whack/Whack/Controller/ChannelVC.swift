@@ -20,13 +20,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         SocketService.instance.getChannel { (success) in
             if success {
-                self.tableView.reloadData()
+                //self.tableView.reloadData()
             }
         }
         
@@ -44,10 +43,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedin {
-            let profile = ProfileVC()
-            profile.modalPresentationStyle = .custom
-            present(profile, animated: true, completion: nil)
-            
+            performSegue(withIdentifier: TO_PROFILE, sender: nil)
         } else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
@@ -66,11 +62,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             usrImg.image = UIImage(named: UserDataService.instance.avatarName)
             usrImg.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
-        } else {
-            loginBtn.setTitle("Login", for: .normal)
-            usrImg.image = UIImage(named: "menuProfileIcon")
-            usrImg.backgroundColor = UIColor.clear
-            tableView.reloadData()
         }
     }
     
@@ -79,7 +70,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func channelsLoaded(_ notif: Notification) {
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

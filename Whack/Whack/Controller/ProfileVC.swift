@@ -10,23 +10,25 @@ import UIKit
 
 class ProfileVC: UIViewController {
 
-    @IBOutlet weak var bgView: UIView!
+    @IBOutlet var bgView: UIView!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var profileImg: CircleImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    @IBAction func closeBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func logoutBtnPressed(_ sender: Any) {
         UserDataService.instance.logoutUser()
         NotificationCenter.default.post(name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+        //dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     

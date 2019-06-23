@@ -15,6 +15,9 @@ let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND =  "unwindToChannel"
 let AVATAR = "toAvatarPicker"
+let CREATE_TO_REVEAL = "toRevealController"
+let LOGIN_TO_REVEAL = "loginToRevealController"
+let TO_PROFILE = "toProfile"
 
 //user defaults
 let TOKEN_KEY = "token"

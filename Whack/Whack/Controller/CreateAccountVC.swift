@@ -52,7 +52,7 @@ class CreateAccountVC: UIViewController {
                             print(UserDataService.instance.name, UserDataService.instance.avatarName)
                             self.spinner.isHidden = true
                             self.spinner.startAnimating()
-                            self.performSegue(withIdentifier: UNWIND, sender: nil)
+                            self.performSegue(withIdentifier: CREATE_TO_REVEAL, sender: nil)
                             NotificationCenter.default.post(name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
                         })
                     }
@@ -81,7 +81,7 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: UNWIND, sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func setupView() {

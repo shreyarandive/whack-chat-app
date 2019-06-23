@@ -14,7 +14,6 @@
 		350AB28C22A894B0009FEE18 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AB28B22A894B0009FEE18 /* GradientView.swift */; };
 		351302BC22B18F780090D3FB /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351302BB22B18F780090D3FB /* CircleImage.swift */; };
 		351302C222B2E0330090D3FB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351302C022B2E0330090D3FB /* ProfileVC.swift */; };
-		351302C322B2E0330090D3FB /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351302C122B2E0330090D3FB /* ProfileVC.xib */; };
 		351302C522B327610090D3FB /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351302C422B327610090D3FB /* MessageService.swift */; };
 		351302C722B327950090D3FB /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351302C622B327950090D3FB /* Channel.swift */; };
 		351302C922B3325F0090D3FB /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351302C822B3325F0090D3FB /* ChannelCell.swift */; };
@@ -47,7 +46,6 @@
 		350AB28B22A894B0009FEE18 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		351302BB22B18F780090D3FB /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		351302C022B2E0330090D3FB /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		351302C122B2E0330090D3FB /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		351302C422B327610090D3FB /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		351302C622B327950090D3FB /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		351302C822B3325F0090D3FB /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				351302CB22B337AE0090D3FB /* AddChannelVC.xib */,
-				351302C122B2E0330090D3FB /* ProfileVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				351302CD22B337AE0090D3FB /* AddChannelVC.xib in Resources */,
-				351302C322B2E0330090D3FB /* ProfileVC.xib in Resources */,
 				35D577F2229CCBB600CA3D1B /* LaunchScreen.storyboard in Resources */,
 				35D577EF229CCBB600CA3D1B /* Assets.xcassets in Resources */,
 				35D577ED229CCBB600CA3D1B /* Main.storyboard in Resources */,
