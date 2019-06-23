@@ -21,14 +21,14 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
+        
         SocketService.instance.getChannel { (success) in
             if success {
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
-        
         SocketService.instance.getAllMessages { (newMessage) in
             if newMessage.channelID != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedin {
                 MessageService.instance.unreadChannels.append(newMessage.channelID)
@@ -44,8 +44,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedin {
             performSegue(withIdentifier: TO_PROFILE, sender: nil)
-        } else {
-            performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
     }
     
@@ -70,7 +68,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func channelsLoaded(_ notif: Notification) {
-        //tableView.reloadData()
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

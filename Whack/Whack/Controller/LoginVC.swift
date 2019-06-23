@@ -19,6 +19,12 @@ class LoginVC: UIViewController {
         setupView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if AuthService.instance.isLoggedin {
+            performSegue(withIdentifier: LOGIN_TO_REVEAL, sender: nil)
+        }
+    }
+    
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
     
     @IBAction func createAccountBtnPressed(_ sender: Any) {
@@ -36,9 +42,10 @@ class LoginVC: UIViewController {
             if success {
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success {
+                        NotificationCenter.default.post(name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
                         self.spinner.isHidden = true
                         self.spinner.stopAnimating()
-                        self.setupView()
+                        self.performSegue(withIdentifier: LOGIN_TO_REVEAL, sender: nil)
                     }
                 })
             }
@@ -53,9 +60,6 @@ class LoginVC: UIViewController {
         passwrdTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))
         view.addGestureRecognizer(tap)
-        if AuthService.instance.isLoggedin {
-            performSegue(withIdentifier: LOGIN_TO_REVEAL, sender: nil)
-        }
     }
     
     @objc func handleTap() {

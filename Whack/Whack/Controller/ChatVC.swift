@@ -39,7 +39,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
+        onLoginGetMessages()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         SocketService.instance.getAllMessages { (newMessage) in
@@ -99,6 +100,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.messageTxt.text = ""
                     self.messageTxt.resignFirstResponder()
                     SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
+                    self.isTyping = false
+                    self.sendBtn.isHidden = true
                 } else {
                     print("ERROR")
                 }
@@ -118,15 +121,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
-        }
-    }
-    
-    @objc func userDataDidChange(_ notif: Notification) {
-        if AuthService.instance.isLoggedin {
-            onLoginGetMessages()
-        } else {
-            channelNameLbl.text = "Please Login"
-            tableview.reloadData()
         }
     }
     
