@@ -23,3 +23,13 @@ Create new account                  |  Pick an avatar                   |  Creat
 :----------------------------------:|:---------------------------------:|:-----------------------------------:|:---------------------------------:
 ![](Whack/gifs/create_account.gif)  |  ![](Whack/gifs/pick_avatar.gif)  |  ![](Whack/gifs/create_channel.gif) | ![](Whack/gifs/logout.gif)
 
+## Gifs showing a chat in action
+
+* Shows indication for unread channels
+
+![](Whack/gifs/chat1.gif) 
+
+* Shows names of users who are typing
+
+![](Whack/gifs/chat2.gif) 
+
