@@ -32,7 +32,7 @@ class MessageService {
                             let channel = Channel(id: id, name: name, description: channelDesc)
                             self.channels.append(channel)
                         }
-                        NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
+                        //NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                         completion(true)
                     }
                 } catch {
@@ -65,7 +65,6 @@ class MessageService {
                             let currentMessage = Message(message: messageBody, id: userId, name: userName, avatarColor: userAvatarColor, avatarName: userAvatarName, channelID: channelId, timestamp: timeStamp)
                             self.messages.append(currentMessage)
                         }
-                        print(self.messages)
                         completion(true)
                     }
                 } catch {

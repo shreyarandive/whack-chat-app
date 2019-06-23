@@ -19,9 +19,14 @@ class LoginVC: UIViewController {
         setupView()
     }
     
-    @IBAction func closePressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    override func viewDidAppear(_ animated: Bool) {
+        if AuthService.instance.isLoggedin {
+            performSegue(withIdentifier: LOGIN_TO_REVEAL, sender: nil)
+        }
     }
+    
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
+    
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
     }
@@ -40,7 +45,7 @@ class LoginVC: UIViewController {
                         NotificationCenter.default.post(name: NOTIF_USR_DATA_DID_CHANGE, object: nil)
                         self.spinner.isHidden = true
                         self.spinner.stopAnimating()
-                        self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: LOGIN_TO_REVEAL, sender: nil)
                     }
                 })
             }
@@ -49,6 +54,8 @@ class LoginVC: UIViewController {
     
     func setupView() {
         spinner.isHidden = true
+        usrnameTxt.text = ""
+        passwrdTxt.text = ""
         usrnameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
         passwrdTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: whackPurplePlaceHolder])
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.handleTap))

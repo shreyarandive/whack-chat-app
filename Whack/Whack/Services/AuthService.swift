@@ -13,9 +13,7 @@ import SwiftyJSON
 class AuthService {
     
     static let instance = AuthService()
-    
     let defaults = UserDefaults.standard
-    
     var isLoggedin : Bool {
         get {
             return defaults.bool(forKey: LOGGED_IN_KEY)
@@ -24,7 +22,6 @@ class AuthService {
             defaults.set(newValue, forKey: LOGGED_IN_KEY)
         }
     }
-    
     var authToken: String {
         get {
             return defaults.value(forKey: TOKEN_KEY) as! String
@@ -33,7 +30,6 @@ class AuthService {
             defaults.set(newValue, forKey: TOKEN_KEY)
         }
     }
-    
     var userEmail: String {
         get {
             return defaults.value(forKey: USER_EMAIL) as! String
@@ -66,40 +62,24 @@ class AuthService {
     func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowercaseEmail = email.lowercased()
-        
         let body: [String: Any] = [
             "email": lowercaseEmail,
             "password": password
         ]
         
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
-            
             if response.result.error == nil {
-                /*if let json = response.result.value as? Dictionary<String, Any> {
-                    if let email = json["user"] as? String {
-                        self.userEmail = email
-                    }
-                    if let token = json["token"] as? String {
-                        self.authToken = token
-                    }
-                }*/
-                //swiftyJSON
-                
                 guard let data = response.data else { return }
-                
                 do {
                     let json = try JSON(data: data)
-                    
                     self.userEmail = json["user"].stringValue
                     self.authToken = json["token"].stringValue
-                    
                     self.isLoggedin = true
                     completion(true)
                     
                 } catch let error as NSError {
                     print(error)
                 }
-                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
