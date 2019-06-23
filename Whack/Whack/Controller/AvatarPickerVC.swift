@@ -37,7 +37,7 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 28
+        return 29
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
