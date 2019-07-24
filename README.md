@@ -10,7 +10,7 @@ A complete iOS chat app developed using [mac-chat-api](https://github.com/devslo
 * Send and receive messages
 * See if other personis typing a message
 
-## Build with
+## Built with
 * Xcode 10.1 and Swift 4.2 for development of the app
 * [Alamofire](https://github.com/Alamofire/Alamofire) (4.8.2)
 * [Socket IO Client Swift](https://github.com/socketio/socket.io-client-swift) (15.0.0)
